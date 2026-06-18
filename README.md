@@ -15,11 +15,11 @@ divase_name (VARCHAR) — назва пристрою
 ip_adress (VARCHAR) — IP-адреса пристрою в мережі
 3. ecurity_events: Довідник можливих інцидентів та дій. Містить такі колонки:
 event_id (INT, PK) — унікальний код події.
-event_type (VARCHAR) — тип події (напр. *Successful Login*, *Failed Login Attempt*, *Port Scanning Detected*).
+event_type (VARCHAR) — тип події
 severity_level (INT) — базовий рівень загрози від 1 до 10.
 4. logs: Центральна таблиця, яка фіксує хронологію подій.Містить такі колонки:
 log_id (INT, PK) — унікальний лог.
-user_id (INT, FK) — хто виконав дію (може бути `NULL`, якщо зафіксовано анонімну атаку).
+user_id (INT, FK) — хто виконав дію
 device_id (INT, FK) — з якого пристрою.
 event_id (INT, FK) — яка саме подія відбулася.
 log_date (TIMESTAMP) — точний час фіксації.
